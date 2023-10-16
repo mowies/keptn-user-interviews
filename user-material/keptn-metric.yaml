@@ -1,9 +1,0 @@
-apiVersion: metrics.keptn.sh/v1alpha3
-kind: KeptnMetric
-metadata:
-  name: avg-cpu-usage
-spec:
-  provider:
-    name: prometheus
-  query: 'avg(100 * max(1 - rate(node_cpu_seconds_total{mode="idle"}[5m])) by (instance))'
-  fetchIntervalSeconds: 10
