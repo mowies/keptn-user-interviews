@@ -28,6 +28,7 @@ of prepared YAML files in this folder.
    ```
    http://observability-stack-kube-p-prometheus.monitoring.svc:9090
    ```
+
 6. For the `KeptnMetric`, we will use the average CPU usage of the cluster. The PromQL query for this looks
    as follows:
    ```
