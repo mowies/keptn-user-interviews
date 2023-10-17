@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: keptn-user-interview-1
+  annotations:
+    keptn.sh/lifecycle-toolkit: "enabled"
 ---
 apiVersion: apps/v1
 kind: Deployment

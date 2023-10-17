@@ -67,10 +67,11 @@ We will set up a simple workload with a KeptnApp and then enhance it with a pre 
 ### Main tasks
 1. Please use the same cluster as before and also, re-use the same Keptn installation as before.
 2. For all further steps, please use the `keptn-user-interview-2` namespace.
-3. In the `task2` folder, you will find a test app similar to the one from task 1. This time you will need to enhance
-   that app with some Keptn CRDs around it.
-4. Please set up a `KeptnApp` resource that manages the NginX test workload. You can use an arbitrary SemVer for the
-   `version` field in the `KeptnApp` resource.
+3. In the `task2` folder, you will find a NginX demo app similar to the one from task 1.
+   This time you will need to enhance that app with some Keptn CRDs around it.
+4. Please set up a `KeptnApp` resource that manages the NginX demo app. You can use an arbitrary SemVer for the
+   `version` field in the `KeptnApp` resource. But make sure that the version of the workload corresponds to the
+   `app.kubernetes.io/version` of the NginX demo app.
 5. Now, it's time to set up a pre-deployment task for the sample app.
    Please set up a pre-deployment task with name `pre-task-1`. It should run a simple request to the numbers API
    at `http://numbersapi.com/42` and return the result as a log line.
