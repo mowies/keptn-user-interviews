@@ -79,3 +79,4 @@ We will set up a simple workload with a KeptnApp and then enhance it with a pre 
 7. Using the name from the created pre-deployment task, reference the newly created task in the KeptnApp.
 8. Then, deploy the KeptnApp and test deployment into the cluster.
 9. You should see the pod first stay in pending state until the pre-deployment task was run and finished successfully.
+   Then, the pod should get scheduled after some time and should end up in a running state.
