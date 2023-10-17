@@ -67,16 +67,17 @@ We will set up a simple workload with a KeptnApp and then enhance it with a pre 
 ### Main tasks
 1. Please use the same cluster as before and also, re-use the same Keptn installation as before.
 2. For all further steps, please use the `keptn-user-interview-2` namespace.
-3. In the `task2` folder, you will find a NginX demo app similar to the one from task 1.
+3. In the `task2` folder, you will find an NginX demo app similar to the one from task 1.
    This time you will need to enhance that app with some Keptn CRDs around it.
 4. Please set up a `KeptnApp` resource that manages the NginX demo app. You can use an arbitrary SemVer for the
    `version` field in the `KeptnApp` resource. But make sure that the version of the workload corresponds to the
    `app.kubernetes.io/version` of the NginX demo app.
 5. Now, it's time to set up a pre-deployment task for the sample app.
    Please set up a pre-deployment task with name `pre-task-1`. It should run a simple request to the numbers API
-   at `http://numbersapi.com/42` and return the result as a log line.
+   at `http://numbersapi.com/42` and return the result as a log line. The typescript code for the task is already
+   prepared for you in `task2/deno-script.ts`.
 6. After implementing the task, you can deploy it to the cluster.
-7. Using the name from the created pre-deployment task, reference the newly created task in the KeptnApp.
-8. Then, deploy the KeptnApp and test deployment into the cluster.
+7. Update your `KeptnApp` definition so that it runs the previously set up pre-deployment task.
+8. Then, deploy the KeptnApp and the NginX demo app into the cluster.
 9. You should see the pod first stay in pending state until the pre-deployment task was run and finished successfully.
    Then, the pod should get scheduled after some time and should end up in a running state.
