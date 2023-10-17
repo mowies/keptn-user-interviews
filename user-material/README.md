@@ -36,14 +36,16 @@ of prepared YAML files in this folder.
    ```
    Please use the above query and reference the previously created `KeptnMetricsProvider` to set up the
    `KeptnMetric`.
+
 7. After applying the two new resources to the cluster and waiting a few seconds, you should see some values
    appear, when fetching the KeptnMetric resources with:
    ```shell
    kubectl get keptnmetrics -A
    ```
-8. It's time to set up the HPA. Please use the provided `hpa.yaml` file with a stub of an HPA and use the Keptn
-   docs to figure out how to reference a `KeptnMetric` with it. Use a target value of `"5"` for the HPA.
-   That should trigger some scaling of the NginX deployment in the cluster.
+8. It's time to set up the HPA. Please use the provided `hpa.yaml` file with a stub of an HPA and use the Keptn and
+   Kubernetes docs to figure out how to reference a `KeptnMetric` with it. Use a target value of `"5"` for the HPA.
+9. After applying the HPA and waiting a little bit, we should see some scaling of the NginX deployment
+   kicking in and as a result, we should have 10 NginX pods in the end.
 
 
 ## Task 2 - Set up a post deployment task for you app
